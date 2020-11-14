@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ProyectoWeb.Empleados>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<form method="get">
+    <input type="text" id="Criterio" name="Criterio" />
+    <input type="submit" id="cmdBuscar" value="Buscar" />
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalarioMensual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdNomina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamentos.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Puestos.NombrePuesto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalarioMensual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdNomina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamentos.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puestos.NombrePuesto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdEmpleado }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdEmpleado }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdEmpleado })
+        </td>
+    </tr>
+}
+
+</table>

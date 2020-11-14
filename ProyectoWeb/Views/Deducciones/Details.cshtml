@@ -1,0 +1,42 @@
+﻿@model ProyectoWeb.Deducciones
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Deducciones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreTipoDeducciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreTipoDeducciones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DependeSalario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DependeSalario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdDeduccion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

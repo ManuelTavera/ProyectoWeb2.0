@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>SysNOM</h1>
+    <p class="lead">Sistema de Gestion de Nominas</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Gestionar a los Empleados</h2>
+        <p><a class="btn btn-default" href="@Url.Action("Index", "Empleados")">Empleados &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Gestionar los Departamentos</h2>
+        <p><a class="btn btn-default" href="@Url.Action("Index", "Departamentos")">Departamentos &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Verificar los puestos</h2>
+        <p><a class="btn btn-default" href="@Url.Action("Index", "Puestos")">Puestos &raquo;</a></p>
+    </div>
+</div>

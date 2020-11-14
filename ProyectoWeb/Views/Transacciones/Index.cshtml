@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ProyectoWeb.Transacciones>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<form method="get">
+    <input type="text" id="Criterio" name="Criterio" />
+    <input type="submit" id="cmdBuscar" value="Buscar" />
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoTransaccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deducciones.NombreTipoDeducciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleados.Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ingreso.NombreIngreso)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoTransaccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Monto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deducciones.NombreTipoDeducciones)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleados.Cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ingreso.NombreIngreso)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdTransaccion }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdTransaccion }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdTransaccion })
+        </td>
+    </tr>
+}
+
+</table>
